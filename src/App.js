@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import { Expenses } from "./components/expenses/Expenses";
+import { NewExpenses } from "./components/new-expense/NewExpenses";
 
 function App() {
+  const [users, setUsers] = useState([]);
+
+  const addUser = (data) => {
+    const addedData = [...users];
+    addedData.push(data);
+    setUsers(addedData);
+  };
+  users.sort((a, b) => {
+    return b.age - a.age;
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NewExpenses onAddUser={addUser} />
+      <Expenses people={users} />
     </div>
   );
 }

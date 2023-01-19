@@ -1,0 +1,21 @@
+.contain {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.input {
+  height: 23px;
+  border-style: none;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
+.label {
+  margin-left: -371px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
